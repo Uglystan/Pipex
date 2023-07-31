@@ -6,7 +6,7 @@
 #    By: lgirault <lgirault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 11:41:12 by lgirault          #+#    #+#              #
-#    Updated: 2023/06/15 19:17:59 by lgirault         ###   ########.fr        #
+#    Updated: 2023/06/15 19:21:18 by lgirault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,19 @@ CC = cc
 CFLAGS = -Werror -Wall -Wextra
 RM = rm -rf
 
-SRC = bonus/pipex.c \
-	bonus/find_good_path.c \
-	bonus/make_tab_option.c \
-	bonus/make_tab_path.c \
-	bonus/free.c \
-	bonus/utils.c \
-	bonus/here_doc.c \
+SRC = Pipex/pipex.c \
+	Pipex/find_good_path.c \
+	Pipex/make_tab_option.c \
+	Pipex/make_tab_path.c \
+	Pipex/free.c \
+	Pipex/utils.c \
+	Pipex/here_doc.c \
 
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
-$(NAME): $(OBJ) mandatory/pipex.h
+$(NAME): $(OBJ) Pipex/pipex.h
 	make -C ./libft_tot/
 	$(CC) $(CFLAGS) $(OBJ) libft_tot/libft.a -o $(NAME)
 
